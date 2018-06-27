@@ -1,0 +1,40 @@
+\name{EMalgorithm}
+\alias{EMalgorithm}
+\title{EM algorithm to infer CpG sites.}
+\usage{
+    EMalgorithm(cpgsitefile,allcpgfile,category="1",writefile=NULL,
+    reportfile=NULL)
+}
+\description{
+    Using EM algorithm to infer the real number of CpG sites.
+}
+\arguments{
+    \item{cpgsitefile}{The path of file to store CpG site.}
+    \item{allcpgfile}{The file to store CpG sites.}
+    \item{category}{Default to "1".}
+    \item{writefile}{The path of output results. (If writefile=NULL, there will
+    return the results back to main program.)}
+    \item{reportfile}{The path of output results.}
+}
+
+\value{
+    \item{values or file}{If writefile is NULL, then return the values of
+    results,otherwise output to write file.}
+}
+
+\examples{
+    datafile<-system.file("extdata", package = "methylMnM")
+    data(example_data)
+
+    filepath<-datafile[1]
+    allcpgfile<-EM_H1ESB1_MeDIP_sigleCpG
+
+    dirwrite<-paste(setwd(getwd()),"/",sep="")
+    readshort<-paste(filepath,"/H1ESB1_Medip_18.extended.txt",sep="")
+    writefile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG.bed",sep="")
+    reportfile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG_report.bed",sep="")
+
+    f<-EMalgorithm(cpgsitefile=readshort,allcpgfile=allcpgfile,category="1",
+    writefile=writefile,reportfile=reportfile)
+
+}
