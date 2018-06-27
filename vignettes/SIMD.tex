@@ -1,0 +1,42 @@
+\documentclass{article}
+\title{SIMD Tutorial}
+\author{Yan Zhou}
+\usepackage{Sweave}
+
+
+
+\begin{document}
+\input{SIMD-concordance}
+\maketitle
+
+#1 Introduction
+SIMD method is developed for jointly analyzing MeDIP-seq and MRE-seq data,
+which are derived from methylated DNA immunoprecipitation (MeDIP) experiments
+followed by sequencing (MeDIP-seq) and methyl-sensitive restriction enzymes
+experiments for unmethylated CpGs (MRE-seq). We have implemented the
+SIMD method via a set of R functions with the computational intensive parts
+written in C. We make a R package named SIMD and give a tutorial for
+the package. The method consist three steps.
+Step 1: Data Pre-preparation;
+  Calculate the CpG count.
+  Calculate the MRE CpG count.
+  Calculate MeDIP-seq tag count of each site of control and treatment
+samples.
+  Calculate MRE-seq tag count of each site of control and treatment
+samples.
+Step 2: Calculating p-values of each CpG site by the EM test;
+Step 3: q-values for FDR control;
+
+We use a part of a real dataset to illustrate the usage of the SIMD package.
+The programs can run under the windows 10 system. The
+R versions should larger than 3.5.0.
+
+#2 Preparations
+Before installing SIMD package, the user must install two other R pack-
+ages, which can be done using the following commands.
+  <<test1>>=
+source("http://bioconductor.org/biocLite.R")
+biocLite("edgeR")
+biocLite("statmod")
+library(edgeR)
+library(statmod)
