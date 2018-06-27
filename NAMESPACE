@@ -1,0 +1,8 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("stats", "dbinom")
+importFrom("utils", "count.fields", "read.table", "write.table")
+importFrom("methylMnM", "countcpgbin")
+
+useDynLib(SIMD, .registration = TRUE, .fixes = "C_")
+export("EMtest", "EMalgorithm", "emalgth", "emalgth1", "probBinom")
+
