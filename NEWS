@@ -1,7 +1,5 @@
 # SIMD 0.99.1
 
-* Added a `NEWS.md` file to track changes to the package.
-NEWS file for the SIMD package
 
 ## Changes in version 0.99.1
 1.Modify the problem in R check.
