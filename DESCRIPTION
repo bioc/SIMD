@@ -14,3 +14,4 @@ Imports: edgeR, statmod, methylMnM, stats, utils
 Suggests: knitr,rmarkdown
 biocViews: DifferentialMethylation,SingleCell, DifferentialExpression
 VignetteBuilder: knitr
+RoxygenNote: 6.0.1
