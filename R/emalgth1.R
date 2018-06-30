@@ -1,4 +1,25 @@
 #sum>=1
+#' Calculate the probability on condition that the sums more than 1.
+#' 
+#' @description Calculate the probability on condition that at least a CpG 
+#' contributes to a short read.
+#' @param X A matrix about X, the elements in X takes values on {0,1} and
+#' satisfy the sums of each row more than 1.
+#' @return y1 The probability when sums more than 1.
+#' @examples 
+#' set.seed(123)
+#' d <- matrix(0, nrow=200, ncol=50)
+#' random_num<-sample(1:10, 200, replace=TRUE)
+#' for(i in 1:nrow(d)){
+#'   temp<-sample(1:50, random_num[i], replace=FALSE)
+#'   d[i,temp]<-1
+#' }
+#' result<-emalgth1(d)
+#' head(result)
+#' @export
+
+
+
 emalgth1<-function(X)
 {
     N<-apply(X,2,sum)/length(X[,1])

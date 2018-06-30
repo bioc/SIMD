@@ -4,6 +4,51 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
+#' Inferring the methylation expression level of single sites.
+#' 
+#' @description Using statistical framework and EM algorithm to infer the
+#' methylation expression level of single sites.
+#' @param datafile The files of sample. (datafile should be cbind(data1,data2,
+#' data3,data4), where data1 and data2 are Medip-seq data, data3 and data4 are
+#' MRE-seq data).
+#' @param chrstring The chromosome should be test.
+#' @param cpgfile The file of all CpG number.
+#' @param mrecpgfile The file of MRE-CpG number(If NULL, mrecpgfile will equal
+#' to cpgfile).
+#' @param writefile The path of file of output result. (If writefile=NULL,
+#' there will return the results back to main program)
+#' @param reportfile The path of output results of the number of bin, total
+#' reads before processing and total reads after processing.
+#' @param mreratio The ratio of total unmethylation level with total
+#' methylation level (Defaulted mreratio is 3/7).
+#' @param psd The parameters of pseudo count, which pseudo count added to
+#' Medip-seq and MRE-seq count.
+#' @param mkadded Added to all CpG and MRE CpG (We set psd=2 and mkadded=1 as
+#' defaulted for robust).
+#' @param f Adjustment weight, default to 1.
+#' @return values or file The output file "writefile" will own eleven columns,
+#' that is, "chr", "chrSt", "chrEnd", "Medip1", "Medip2", "MRE1", "MRE2",
+#' "cg","mrecg","pvalue" and "Ts". We also output a report file which will
+#' include parameters "s1/s2", "s3/s4", "N1", "N2", "N3", "N4", "c1",
+#' "c2", "Number of windows" and "Spend time".
+#' @examples data(example_data)
+#' data1<-EM2_H1ESB1_MeDIP_sigleCpG
+#' data2<-EM2_H1ESB2_MeDIP_sigleCpG
+#' data3<-H1ESB1_MRE_sigleCpG
+#' data4<-H1ESB2_MRE_sigleCpG
+#' datafile<-cbind(data1,data2,data3,data4)
+#' allcpg<-all_CpGsite_bin_chr18
+#' mrecpg<-three_mre_cpg
+#' dirwrite<-paste(setwd(getwd()),"/",sep="")
+#' writefile<-paste(dirwrite,"pval_EM_H1ESB1_H1ESB21.bed",sep="")
+#' reportfile<-paste(dirwrite,"report_pvalH1ESB1_H1ESB21.bed",sep="")
+#' EMtest(datafile=datafile,chrstring=NULL,cpgfile=allcpg,
+#'        mrecpgfile=mrecpg,writefile=writefile,reportfile=reportfile,
+#'        mreratio=3/7, psd=2,mkadded=1,f=1)
+#' @export
+
+
+
 EMtest <-function(datafile=NULL,chrstring=NULL,cpgfile,mrecpgfile=NULL,
 writefile=NULL,reportfile=NULL,mreratio=3/7, psd=2, mkadded=1,f=1)
     {
@@ -198,17 +243,6 @@ writefile=NULL,reportfile=NULL,mreratio=3/7, psd=2, mkadded=1,f=1)
             typepvalue[ii]<-probBinom(typeT[ii],size1[ii],size2[ii],typermd21,
             typermd43)
     }
-
-    classifypvalue <-function(type1, type2, type3, type4, sm1chring1,
-    sm1chring2,sm1chring3,sm1chring4, p, typelength, sm1chringlength,
-    pvalue=rep(0,length(sm1chring1))){
-        problity<-.C("pvalueclassify", as.integer(type1),as.integer(type2),
-        as.integer(type3),as.integer(type4), as.integer(sm1chring1),
-        as.integer(sm1chring2), as.integer(sm1chring3),as.integer(sm1chring4),
-        as.double(p),as.integer(typelength),as.integer(sm1chringlength),
-        as.double(pvalue))
-        return(problity[[12]])
-        }
 
     smpvalue<-classifypvalue(typesm1[,1], typesm1[,2], typesm1[,3],typesm1[,4],
     smsm1[,1], smsm1[,2],smsm1[,3], smsm1[,4],typepvalue,length(typesm1[,1]),

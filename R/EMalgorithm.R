@@ -1,4 +1,27 @@
 #(2) EM algorithm
+#' EM algorithm to infer CpG sites.
+#' 
+#' @description Using EM algorithm to infer the real number of CpG sites.
+#' @param cpgsitefile The path of file to store CpG site.
+#' @param allcpgfile The file to store CpG sites.
+#' @param category Default to "1".
+#' @param writefile The path of output results. (If writefile=NULL, there will
+#' return the results back to main program.)
+#' @param reportfile The path of output results.
+#' @return values or file If writefile is NULL, then return the values of
+#' results,otherwise output to write file.
+#' @examples 
+#' datafile<-system.file("extdata", package = "methylMnM")
+#' data(example_data)
+#' filepath<-datafile[1]
+#' allcpgfile<-EM_H1ESB1_MeDIP_sigleCpG
+#' dirwrite<-paste(setwd(getwd()),"/",sep="")
+#' readshort<-paste(filepath,"/H1ESB1_Medip_18.extended.txt",sep="")
+#' writefile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG.bed",sep="")
+#' reportfile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG_report.bed",sep="")
+#' f<-EMalgorithm(cpgsitefile=readshort,allcpgfile=allcpgfile,category="1",
+#'               writefile=writefile,reportfile=reportfile)
+#' @export
 
 EMalgorithm<-function(cpgsitefile,allcpgfile,category="1",
 writefile=NULL,reportfile=NULL)
