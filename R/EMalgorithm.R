@@ -16,7 +16,7 @@
 #' filepath<-datafile[1]
 #' allcpgfile<-EM_H1ESB1_MeDIP_sigleCpG
 #' dirwrite<-paste(setwd(getwd()),"/",sep="")
-#' readshort<-paste(filepath,"/H1ESB1_Medip_18.extended.txt",sep="")
+#' readshort<-paste(filepath,"/H1ESB1_MeDIP_18.extended.txt",sep="")
 #' writefile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG.bed",sep="")
 #' reportfile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG_report.bed",sep="")
 #' f<-EMalgorithm(cpgsitefile=readshort,allcpgfile=allcpgfile,category="1",
