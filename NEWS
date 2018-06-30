@@ -1,4 +1,8 @@
-# SIMD 0.99.3
+# SIMD 0.99.4
+
+## Changes in version 0.99.3
+1.Modify some problems in R biocheck.
+2.Recompile .Rd by roxygen2 package in R.
 
 ## Changes in version 0.99.2
 1.Modify some problems in R biocheck.
