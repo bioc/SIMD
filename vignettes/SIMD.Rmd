@@ -42,17 +42,21 @@ R versions should larger than 3.5.0.
 #2 Preparations
 Before installing SIMD package, the user must install two other R pack-
 ages, which can be done using the following commands.
-```{r,eval=FALSE}
+```{r, eval=FALSE}
 source("http://bioconductor.org/biocLite.R")
 biocLite("edgeR")
 biocLite("statmod")
+biocLite("methylMnM")
+```
+
+```{r}
 library(edgeR)
 library(statmod)
+library(methylMnM)
 ```
 Next, to install the SIMD package into your R environment, start R and
 enter:
-```{r,eval=FALSE}
-source("http://bioconductor.org/biocLite.R")
+```{r, eval=FALSE}
 biocLite("SIMD")
 ```
 Then, the SIMD package is ready to load.
@@ -99,7 +103,6 @@ dirwrite<-paste(setwd(getwd()),"/",sep="")
 readshort<-paste(filepath,"/H1ESB1_Medip_18.extended.txt",sep="")
 writefile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG.bed",sep="")
 reportfile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG_report.bed",sep="")
-
 f<-EMalgorithm(cpgsitefile=readshort,allcpgfile=allcpgfile,category="1",
 writefile=writefile,reportfile=reportfile)
 ```
@@ -134,7 +137,9 @@ dirwrite<-paste(setwd(getwd()),"/",sep="")
 
 writefile<-paste(dirwrite,"pval_EM_H1ESB1_H1ESB21.bed",sep="")
 reportfile<-paste(dirwrite,"report_pvalH1ESB1_H1ESB21.bed",sep="")
+```
 
+```{r}
 EMtest(datafile=datafile,chrstring=NULL,cpgfile=allcpg,
 mrecpgfile=mrecpg,writefile=writefile,reportfile=reportfile,
 mreratio=3/7, psd=2,mkadded=1,f=1)
