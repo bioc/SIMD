@@ -92,7 +92,7 @@ In this manual, we use example data located in the data subdirectory of the
 SIMD package, and the example data is pre-processed by MethylMnM package in 
 advance. 
 
-```{r}
+```{r,eval=FALSE}
 datafile<-system.file("extdata", package = "methylMnM")
 data(example_data)
 
