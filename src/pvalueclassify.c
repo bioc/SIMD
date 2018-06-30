@@ -13,7 +13,7 @@ void pvalueclassify(int *type1, int *type2, int *type3, int *type4, int *sm1chri
 		    break;
 		   }
 		}
-	    if(fmod(i,200000)==0) printf("%d\n",i);
+	    
 	  }
 }
 
