@@ -1,6 +1,5 @@
 #include <R.h>
 #include "stdio.h"
-#include "stdlib.h"
 #include "math.h"
 
 void pvalueclassify(int *type1, int *type2, int *type3, int *type4, int *sm1chring1, int *sm1chring2, int *sm1chring3,int *sm1chring4,double *p, int *typelength, int *sm1chringlength,  double *pvalue)
