@@ -1,4 +1,7 @@
-# SIMD 0.99.5
+# SIMD 0.99.6
+
+## Changes in version 0.99.5
+1.Modify the 'TIMEOUT' happened in R biocheck.
 
 ## Changes in version 0.99.4
 1.Modify some problems in R biocheck.
