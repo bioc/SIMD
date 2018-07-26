@@ -3,6 +3,8 @@
 \alias{SIMD NEWS}
 \encoding{UTF-8}
 
+\section{Version 0.99.7}
+
 \section{Changes in version 0.99.6}{\itemize{
 \item Modify the 'TIMEOUT' happened in R biocheck.
 }}
