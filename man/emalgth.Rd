@@ -20,10 +20,10 @@ contributes to a short read.
 \examples{
 set.seed(123)
 d <- matrix(0, nrow=200, ncol=50)
-random_num<-sample(1:50, 200, replace=TRUE)
+random_num <- sample(1:50, 200, replace=TRUE)
 for(i in 1:nrow(d)){
     d[i,random_num[i]]<-1
 }
-result<-emalgth(d)
+result <- emalgth(d)
 head(result)
 }

@@ -5,7 +5,7 @@
 \title{EM algorithm to infer CpG sites.}
 \usage{
 EMalgorithm(cpgsitefile, allcpgfile, category = "1", writefile = NULL,
-    reportfile = NULL)
+  reportfile = NULL)
 }
 \arguments{
 \item{cpgsitefile}{The path of file to store CpG site.}
@@ -27,14 +27,14 @@ results,otherwise output to write file.
 Using EM algorithm to infer the real number of CpG sites.
 }
 \examples{
-datafile<-system.file("extdata", package = "methylMnM")
+datafile <- system.file("extdata", package="methylMnM")
 data(example_data)
-filepath<-datafile[1]
-allcpgfile<-EM_H1ESB1_MeDIP_sigleCpG
-dirwrite<-paste(setwd(getwd()),"/",sep="")
-readshort<-paste(filepath,"/H1ESB1_MeDIP_18.extended.txt",sep="")
-writefile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG.bed",sep="")
-reportfile<-paste(dirwrite,"EM2_H1ESB1_MeDIP_sigleCpG_report.bed",sep="")
-f<-EMalgorithm(cpgsitefile=readshort,allcpgfile=allcpgfile,category="1",
-        writefile=writefile,reportfile=reportfile)
+filepath <- datafile[1]
+allcpgfile <- EM_H1ESB1_MeDIP_sigleCpG
+dirwrite <- paste(setwd(getwd()), "/", sep="")
+readshort <- paste(filepath, "/H1ESB1_MeDIP_18.extended.txt", sep="")
+writefile <- paste(dirwrite, "EM2_H1ESB1_MeDIP_sigleCpG.bed", sep="")
+reportfile <- paste(dirwrite, "EM2_H1ESB1_MeDIP_sigleCpG_report.bed", sep="")
+f <- EMalgorithm(cpgsitefile=readshort, allcpgfile=allcpgfile, category="1",
+                 writefile=writefile, reportfile=reportfile)
 }

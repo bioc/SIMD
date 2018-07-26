@@ -28,10 +28,10 @@ Compute P-values.
 }
 \examples{
 set.seed(1234)
-t<-0.1
-size1<-sample(1:1000, 1, replace=TRUE)
-size2<-sample(1:1000, 1, replace=TRUE)
-c1<-1
-c2<-2
-result<-probBinom(t,size1,size2,c1,c2)
+t <- 0.1
+size1 <- sample(1:1000, 1, replace=TRUE)
+size2 <- sample(1:1000, 1, replace=TRUE)
+c1 <- 1
+c2 <- 2
+result <- probBinom(t, size1, size2, c1, c2)
 }

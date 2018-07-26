@@ -20,11 +20,11 @@ contributes to a short read.
 \examples{
 set.seed(123)
 d <- matrix(0, nrow=200, ncol=50)
-random_num<-sample(1:10, 200, replace=TRUE)
+random_num <- sample(1:10, 200, replace=TRUE)
 for(i in 1:nrow(d)){
-    temp<-sample(1:50, random_num[i], replace=FALSE)
-    d[i,temp]<-1
+    temp <- sample(1:50, random_num[i], replace=FALSE)
+    d[i,temp] <- 1
 }
-result<-emalgth1(d)
+result <- emalgth1(d)
 head(result)
 }

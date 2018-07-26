@@ -5,8 +5,8 @@
 \title{calculate P-value in code EMtest.}
 \usage{
 classifypvalue(type1, type2, type3, type4, sm1chring1, sm1chring2, sm1chring3,
-    sm1chring4, p, typelength, sm1chringlength, pvalue = rep(0,
-    length(sm1chring1)))
+  sm1chring4, p, typelength, sm1chringlength, pvalue = rep(0,
+  length(sm1chring1)))
 }
 \arguments{
 \item{type1}{The first colum of the first matrix.}
