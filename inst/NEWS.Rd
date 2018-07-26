@@ -3,10 +3,13 @@
 \alias{SIMD NEWS}
 \encoding{UTF-8}
 
-\section{Version 0.99.7}{\itemize{
+\section{Version 0.99.8}{\itemize{
 The latest one.
 }}
 
+\section{Version 0.99.7}{\itemize{
+Modify the NOTE in build procedure.
+}}
 
 \section{Changes in version 0.99.6}{\itemize{
 \item 
