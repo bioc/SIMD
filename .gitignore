@@ -8,3 +8,4 @@ src/*.dll
 inst/doc
 SIMD.Rproj
 .Rbuildignore
+.travis.yml
