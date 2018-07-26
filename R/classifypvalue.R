@@ -16,13 +16,25 @@
 #' @keywords internal
 #' @useDynLib SIMD pvalueclassify
 
-classifypvalue <-function(type1, type2, type3, type4, sm1chring1,
-sm1chring2,sm1chring3,sm1chring4, p, typelength, sm1chringlength,
-pvalue=rep(0,length(sm1chring1))){
-    problity<-.C("pvalueclassify", as.integer(type1),as.integer(type2),
-as.integer(type3),as.integer(type4), as.integer(sm1chring1),
-as.integer(sm1chring2), as.integer(sm1chring3),as.integer(sm1chring4),
-as.double(p),as.integer(typelength),as.integer(sm1chringlength),
-as.double(pvalue))
+classifypvalue <- function(type1, type2, type3, type4, 
+                           sm1chring1, sm1chring2, sm1chring3, 
+                           sm1chring4, p, typelength, sm1chringlength,
+                           pvalue=rep(0,length(sm1chring1))){
+    problity <- .C("pvalueclassify", as.integer(type1), 
+                   as.integer(type2), as.integer(type3), 
+                   as.integer(type4), as.integer(sm1chring1),
+                   as.integer(sm1chring2), as.integer(sm1chring3), 
+                   as.integer(sm1chring4), as.double(p), 
+                   as.integer(typelength), as.integer(sm1chringlength),
+                   as.double(pvalue))
     return(problity[[12]])
 }
+
+
+
+
+
+
+
+
+
