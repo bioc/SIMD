@@ -11,7 +11,7 @@ extern void pvalueclassify(void *, void *, void *, void *, void *, void *,
 
 static const R_CMethodDef cMethods[] = {
   {"pvalueclassify", (DL_FUNC) & pvalueclassify, 12},
-  NULL
+  {NULL}
 };
 
 void R_init_SIMD(DllInfo *info)
