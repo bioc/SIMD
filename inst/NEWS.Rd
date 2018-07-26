@@ -3,10 +3,19 @@
 \alias{SIMD NEWS}
 \encoding{UTF-8}
 
-\section{Version 0.99.7}
+\section{Version 0.99.7}{\itemize{
+The latest one.
+}}
+
 
 \section{Changes in version 0.99.6}{\itemize{
-\item Modify the 'TIMEOUT' happened in R biocheck.
+\item 
+Adjust the code format to follow the coding style.
+\item
+Generate NEWS file in .Rd form.
+\item
+Add some information in README.md, vignettes and DESCRIPTION file 
+to make the package SIMD be more understandable.
 }}
 
 \section{Changes in version 0.99.5}{\itemize{
