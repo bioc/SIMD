@@ -7,7 +7,7 @@
 The latest one.
 }}
 
-\section{Version 0.99.7}{\itemize{
+\section{Changes in version 0.99.7}{\itemize{
 Modify the NOTE in build procedure.
 }}
 
