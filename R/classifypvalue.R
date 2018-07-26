@@ -30,7 +30,7 @@ classifypvalue <- function(type1, type2, type3, type4,
     return(problity[[12]])
 }
 
-
+.onUnload <- function (libpath) {library.dynam.unload("SIMD", libpath)}
 
 
 
