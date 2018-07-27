@@ -3,8 +3,15 @@
 \alias{SIMD NEWS}
 \encoding{UTF-8}
 
-\section{Version 0.99.8}{\itemize{
+\section{Version 0.99.9}{\itemize{
 The latest one.
+}}
+
+\section{Changes in version 0.99.8}{\itemize{
+\item
+Modify vignette output to BiocStyle .
+\item
+Add some information in README file.
 }}
 
 \section{Changes in version 0.99.7}{\itemize{
