@@ -48,10 +48,8 @@ R versions should larger than 3.5.0.
 Before installing SIMD package, the user must install three other R pack-
 ages, which can be done using the following commands:
 ```{r, eval=FALSE}
-source("http://bioconductor.org/biocLite.R")
-biocLite("edgeR")
-biocLite("statmod")
-biocLite("methylMnM")
+install.packages("BiocManager")
+BiocManager::install(c('edgeR', 'statmod','methylMnM'))
 
 library(edgeR)
 library(statmod)
@@ -60,8 +58,7 @@ library(methylMnM)
 Next, to install the SIMD package into your R environment, start R and
 enter:
 ```{r, eval=FALSE}
-source("http://bioconductor.org/biocLite.R")
-biocLite("SIMD")
+BiocManager::install("SIMD")
 ```
 Then, the SIMD package is ready to load.
 ```{r}
@@ -127,7 +124,7 @@ function of *EMalgorithm()*, which use EM algorithm to infer the actual reads
 by the observation fragments. The results are saved in file *writefile* and 
 *reportfile*. We give an example as follows, the data is from data subdirectory 
 of the SIMD package:
-```{r, eval=FALSE}
+```{r}
 data(example_data)
 allcpgfile <- EM_H1ESB1_MeDIP_sigleCpG
 readshort <- paste(filepath, "/H1ESB1_MeDIP_18.extended.txt", sep="")
