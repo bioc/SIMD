@@ -137,19 +137,20 @@ EMalgorithm <- function(cpgsitefile, allcpgfile, category="1",
     d <- proc.time()
     time <- d-w
     if (!is.null(reportfile)) {
-        write(paste("Number of CpG sites:", length(cpg20[, 4])),
-        reportfile, append=FALSE)
-        write(paste("Total count of all CpG sites before EM
-        algorithm:", sum(cpg19[, 4])), reportfile, append=TRUE)
-        write(paste("Total count of all CpG sites after EM
-        algorithm:", sum(cpg20[, 4])), reportfile, append=TRUE)
-        write(paste("Spend time:", time), reportfile, append=TRUE)
+        str <- paste("Number of CpG sites:", length(cpg20[, 4]),
+                     "\n",
+                     "Total count of all CpG sites before EM algorithm:", 
+                     sum(cpg19[, 4]),
+                     "\n",
+                     "Total count of all CpG sites after EM algorithm:", 
+                     sum(cpg20[, 4]),
+                     "\n",
+                     "Spend time:", time)
+        write(str, reportfile)
     }
 
-    if (is.null(writefile)) {
-        return(cpg20)
-    } else {
+    if (!is.null(writefile)) 
         write.table(cpg20, writefile, sep="\t", quote=FALSE, row.names=FALSE)
-    }
-
+    return(cpg20)
+    
 }
