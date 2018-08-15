@@ -3,8 +3,21 @@
 \alias{SIMD NEWS}
 \encoding{UTF-8}
 
-\section{Version 0.99.9}{\itemize{
+\section{Version 0.99.10}{\itemize{
 The latest one.
+}}
+
+\section{Changes in version 0.99.9}{\itemize{
+\item
+put return statement in code at the end.
+\item
+instead of writing at each line, you paste output
+lines in a single paste call and then use a single write call.
+\item
+use a package BiocManager instead of biocLite in the vignettes.
+\item
+remove a few eval=FALSE sections in vignette to ensure vignette 
+to be evaluated.
 }}
 
 \section{Changes in version 0.99.8}{\itemize{
