@@ -230,25 +230,35 @@ EMtest <- function(datafile=NULL, chrstring=NULL, cpgfile,
 
     endtime <- proc.time()
     spendtime <- endtime-starttime
-    if (!is.null(reportfile)) {
-        write(paste("s1/s2:", fws1s2), reportfile, append=TRUE)
-        write(paste("s3/s4:", fws3s4), reportfile, append=TRUE)
-        if (length(cpg[kk[, 4] != 0, 1]) != 0) {
-            write(paste("N1(sum of MRE-CpG!=0 ):", N1), reportfile,
-            append=TRUE)
-            write(paste("N2(sum of MRE-CpG!=0 ):", N2), reportfile,
-            append=TRUE)
-            write(paste("N3(sum of MRE-CpG!=0 ):", N3), reportfile,
-            append=TRUE)
-            write(paste("N4(sum of MRE-CpG!=0 ):", N4), reportfile,
-            append=TRUE)
-            write(paste("c1:", rmd21), reportfile, append=TRUE)
-            write(paste("c2:", rmd43), reportfile, append=TRUE)
-        }
-        write(paste("Number of windows:",length(pall)),reportfile,append=TRUE)
-        write(paste("Number of p<1e-8:",sum(pall<1e-8)),reportfile,append=TRUE)
-        write(paste("Number of p<1e-3:",sum(pall<1e-3)),reportfile,append=TRUE)
-        write(paste("Spend time:", spendtime), reportfile, append=TRUE)
+    
+    if(!is.null(reportfile)) {
+       str <- paste("s1/s2:", fws1s2, 
+                    "\n",
+                    "s3/s4:", fws3s4
+      )
+       write(str, reportfile)
+       if (length(cpg[kk[, 4] != 0, 1]) != 0) {
+           str <- paste("N1(sum of MRE-CpG!=0 ):", N1,
+                         "\n",
+                         "N2(sum of MRE-CpG!=0 ):", N2,
+                         "\n",
+                         "N3(sum of MRE-CpG!=0 ):", N3,
+                         "\n",
+                         "N4(sum of MRE-CpG!=0 ):", N4,
+                         "\n",
+                         "c1:", rmd21,
+                         "\n",
+                         "c2:", rmd43)
+           write(str, reportfile, append = TRUE)
+      }
+      str <- paste("Number of windows:",length(pall),
+                   "\n",
+                   "Number of p<1e-8:",sum(pall<1e-8),
+                   "\n",
+                   "Number of p<1e-3:",sum(pall<1e-3),
+                   "\n",
+                   "Spend time:", spendtime)
+      write(str, reportfile, append = TRUE)
     }
 
     cpg[, 2] <- as.integer(cpg[, 2])
@@ -256,12 +266,12 @@ EMtest <- function(datafile=NULL, chrstring=NULL, cpgfile,
     cpgpq <- cbind(cpg[, seq_len(3)], sm, cpg[, 4], kk[, 4], pall, ts)
     colnames(cpgpq) <- c("chr", "chrSt", "chrEnd", "Medip1", "Medip2", "MRE1",
                          "MRE2", "cg", "mrecg", "pvalue", 'Ts')
-    if (is.null(writefile)) {
-        message("Return value.")
-        return(cpgpq)
-    } else {
+    if (!is.null(writefile)) {
         message("Output to writefile.")
         write.table(cpgpq, writefile,sep="\t", quote=FALSE, row.names=FALSE)
+    } else {
+        message("Return value.")
+        return(cpgpq)  
     }
     message("The End.")
     }
