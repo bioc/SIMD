@@ -2,7 +2,7 @@ Package: SIMD
 Type: Package
 Title: Statistical Inferences with MeDIP-seq Data (SIMD) to infer the 
     methylation level for each CpG site
-Version: 0.99.9
+Version: 0.99.10
 Author: Yan Zhou
 Maintainer: Jiadi Zhu <2160090406@email.szu.edu.cn>
 Description: This package provides a inferential analysis method 
