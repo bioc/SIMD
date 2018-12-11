@@ -18,6 +18,6 @@ LazyData: true
 Depends: R (>= 3.5.0)
 Imports: edgeR, statmod, methylMnM, stats, utils
 Suggests: BiocStyle, knitr,rmarkdown
-biocViews: DifferentialMethylation,SingleCell, DifferentialExpression
+biocViews: DifferentialMethylation,SingleCell, DifferentialExpression,ImmunoOncology
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
