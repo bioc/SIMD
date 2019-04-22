@@ -28,7 +28,7 @@ Add some information in README file.
 }}
 
 \section{Changes in version 0.99.7}{\itemize{
-Modify the NOTE in build procedure.
+\item Modify the NOTE in build procedure.
 }}
 
 \section{Changes in version 0.99.6}{\itemize{
