@@ -4,7 +4,7 @@
 \encoding{UTF-8}
 
 \section{Version 0.99.10}{\itemize{
-The latest one.
+\item The latest one.
 }}
 
 \section{Changes in version 0.99.9}{\itemize{
